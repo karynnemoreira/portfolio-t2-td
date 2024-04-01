@@ -1,10 +1,19 @@
 import React from 'react'
+import Imagem from "./imagensPorfolio/perfil.png"
+import * as S from "./Style.jsx"
 
 function Galeria(){
     return(
-        <>
-        <h2>Sou a galeria</h2>
-        </>
+        <S.Fotos>
+       <img src={Imagem} alt="" />
+       <img src={Imagem} alt="" />
+       <img src={Imagem} alt="" />
+       <img src={Imagem} alt="" />
+       <img src={Imagem} alt="" />
+       <img src={Imagem} alt="" />
+       <img src={Imagem} alt="" />
+       <img src={Imagem} alt="" />
+        </S.Fotos>
     )
 }
 
