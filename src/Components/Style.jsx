@@ -183,3 +183,21 @@ img{
 `
 
 //----------CAROUSEL 
+export const CaixaCarrosel = styled.section`
+  display: flex;
+  justify-content: space-evenly;
+  `
+  export const CardProjetos = styled.div`
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  /* border: solid purple; */
+
+  h2,h3{
+    color: white;
+  }
+
+`  

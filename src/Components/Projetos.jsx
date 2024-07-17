@@ -5,8 +5,7 @@ import Cruzeiro from "./imagensPorfolio/cruzeiro.png"
 import Fogo from "./imagensPorfolio/fogo.png"
 import Patrocinadores from "./imagensPorfolio/patrocinadores.png"
 import * as S from "./Style"
-import Carousel from "nuka-carousel";
-
+import { Carousel } from "nuka-carousel";
 
 
 function Projetos() {
@@ -22,10 +21,10 @@ function Projetos() {
     const Carrosel = {
         width: "99vw",
         height: "80vh",
-        backgroundColor: "black",
-      };
+        backgroundColor: "pink",
+    };
 
-      const params = {
+    const params = {
         wrapAround: true,
         animation: 'zoom',
         slidesToShow: 1, //de 3 em 3 imagens
@@ -36,56 +35,56 @@ function Projetos() {
         swiping: true, //arrastar o carousel,
         zoomScale: 0.85,
         className: 'teste',
-    
+
         defaultControlsConfig: {
-    
-          nextButtonText: '»',
-          nextButtonStyle: {
-            //position:"relative",
-            // top:"-6.5vh",
-            marginRight: '3.8vw',
-            // color: "#ffffff",
-            color: 'red',
-            fontSize: '192px',
-            backgroundColor: 'transparent',
-            width: '2vw',
-            // height: '8vh',
-            fontFamily: "Inconsolata",
-          },
-    
-          prevButtonText: '«',
-          prevButtonStyle: {
-            // position: "relative",
-            // top:"-6.5vh",
-            // color: "#ffffff",
-            color: 'red',
-            fontSize: '192px',
-            backgroundColor: 'transparent',
-            width: '2vw',
-            // height: '8vh', 
-            fontFamily: "Inconsolata",
-            Dots: "red",
-            
-          },
+
+            nextButtonText: '»',
+            nextButtonStyle: {
+                //position:"relative",
+                // top:"-6.5vh",
+                marginRight: '3.8vw',
+                // color: "#ffffff",
+                color: 'red',
+                fontSize: '192px',
+                backgroundColor: 'transparent',
+                width: '2vw',
+                // height: '8vh',
+                fontFamily: "Inconsolata",
+            },
+
+            prevButtonText: '«',
+            prevButtonStyle: {
+                // position: "relative",
+                // top:"-6.5vh",
+                // color: "#ffffff",
+                color: 'red',
+                fontSize: '192px',
+                backgroundColor: 'transparent',
+                width: '2vw',
+                // height: '8vh', 
+                fontFamily: "Inconsolata",
+                Dots: "red",
+
+            },
         }
-    
-      }
+
+    }
 
     return (
-        
-<>
-<Carousel {...params}>
 
-{desafios.map((item) => (
-                <div>
-                    <a href={item.link} target="_blank">  <img src={item.imagem} alt={item.titulo} />   </a>
-                    <h2>{item.titulo}</h2>
-                    <h3>{item.descricao}</h3>
-                </div>
-            ))}
-                  </Carousel>
+        <S.CaixaCarrosel>
+            <Carousel {...params}>
 
-    </>
+                {desafios.map((item) => (
+                    <S.CardProjetos>
+                        <a href={item.link} target="_blank">  <img src={item.imagem} alt={item.titulo} />   </a>
+                        <h2>{item.titulo}</h2>
+                        <h3>{item.descricao}</h3>
+               </S.CardProjetos>
+                ))}
+            </Carousel>
+
+        </S.CaixaCarrosel>
 
     )
 }
